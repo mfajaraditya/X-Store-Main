@@ -1,4 +1,4 @@
-.daftar {
+.daftar-masuk {
   width: 450px;
   margin: 40px auto;
   display: flex;
@@ -7,7 +7,7 @@
   border-radius: 12px;
 }
 
-.container-daftar {
+.container-daftar-masuk {
   width: 100%;
   padding: 30px;
   margin-top: 10px;
@@ -15,29 +15,29 @@
   border-radius: 8px;
 }
 
-.container-daftar h1 {
+.container-daftar-masuk h1 {
   text-align: center;
   font-size: 27px;
 }
 
-.container-daftar h4 {
+.container-daftar-masuk h4 {
   text-align: center;
   font-size: 15px;
   margin-top: 8px;
 }
 
-.container-daftar h4 a {
+.container-daftar-masuk h4 a {
   color: #fb6000;
 }
 
-.container-form-daftar {
+.container-form-daftar-masuk {
   width: 100%;
   margin-top: 30px;
   display: grid;
   grid-gap: 18px;
 }
 
-.form-daftar p {
+.form-daftar-masuk p {
   font-size: 11px;
   color: red;
   display: none;
