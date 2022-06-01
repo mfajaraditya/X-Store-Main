@@ -20,10 +20,11 @@ header {
      display: inline-block;
      text-decoration: none;
      color: black;
+     font-size: 13px;
 }
 
 a:hover {
-     font-weight: 800;;
+     font-weight: 800;
 }
 
 .nav-bar-spacer {
@@ -47,6 +48,12 @@ a:hover {
      display: flex;
      flex-direction: row;
      align-items: center;
+}
+
+.logo-header a {
+     text-decoration: none;
+     color: black;
+     font-size: 1.4em;
 }
 
 .box-search-header {
@@ -96,9 +103,11 @@ a:hover {
 .profile-menu-header a {
      text-decoration: none;
      color: black;
+     font-size: 1.2em;
 }
 
 .profile-menu-header p {
      padding: 0 8px 0 8px;
+     font-size: 1.2em;
 }
 

@@ -1,6 +1,7 @@
 @import "./components/app-bar.css";
 @import "./components/footer-bar.css";
 @import "./components/daftar-masuk.css";
+@import "./components/about-us.css";
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 * {
