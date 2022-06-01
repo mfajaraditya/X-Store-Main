@@ -5,6 +5,37 @@ header {
      box-shadow: 3px 2px 4px 1px rgb(190, 190, 190);
 }
 
+.navigation-bar {
+     display: flex;
+     float: right;
+     height: 30px;
+}
+
+.nav-bar li {
+     list-style: none;
+     cursor: pointer;
+}
+
+.nav-list a {
+     display: inline-block;
+     text-decoration: none;
+     color: black;
+}
+
+a:hover {
+     font-weight: 800;;
+}
+
+.nav-bar-spacer {
+     display: flex;
+     flex-grow: 2;
+}
+
+.navigation-bar {
+     display: flex;
+     flex-grow: 1;
+}
+
 .header{
      width: 100%;
      display: flex;
