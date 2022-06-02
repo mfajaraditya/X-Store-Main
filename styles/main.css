@@ -70,13 +70,14 @@ a {
      width: 100%;
      background-color: rgb(225, 225, 225);
      position: relative;
-     border-radius: 10px;
+     border-radius: 20px;
      box-shadow: 0 0 30px 0 rgb(99, 99, 99);
 }
 
 .iklan-fs img {
      width: 100%;
      object-fit: cover;
+     border-radius: 9px;
 }
 
 .title-iklan-fs {
