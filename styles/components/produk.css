@@ -1,0 +1,268 @@
+.produk {
+     width: 100%;
+     padding: 30px;
+     margin-top: 30px;
+     box-sizing: border-box;
+     box-shadow: 0 0 6px 0 rgb(99, 99, 99);
+     border-radius: 10px;
+}
+
+.detail-produk {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+}
+
+.foto-produk {
+     width: 400px;
+}
+
+.foto-produk img {
+     width: 100%;
+     height: 400px;
+     object-fit: cover;
+}
+
+.desc-produk {
+     flex: 1;
+     margin-left: 30px;
+}
+
+.desc-produk h1 {
+     font-size: 23px;
+     font-weight: 600;
+     margin-top: -5px;
+     color: black
+}
+
+.container-rate-produk {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     margin-top: 25px;
+}
+
+.container-rate-produk span {
+     width: 1px;
+     margin: 0 13px;
+}
+
+.isi-container-rate-produk {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+
+.isi-container-rate-produk h5 {
+     font-size: 17px;
+     font-weight: 600;
+     margin-right: 5px;
+}
+
+.isi-container-rate-produk i {
+     font-size: 17px;
+}
+
+.isi-container-rate-produk h4 {
+     font-size: 17px;
+     margin-right: 5px;
+     margin-top: 1px;
+     font-weight: 600;
+}
+
+.isi-container-rate-produk p {
+     font-size: 17px;
+}
+
+.container-harga {
+     width: 100%;
+     box-sizing: border-box;
+     padding: 13px 20px;
+     background-color: #fb6000;
+     margin-top: 30px;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+}
+
+.isi-container-harga {
+     flex:1;
+}
+
+.isi-container-harga h3 {
+     font-size: 18px;
+     margin: 1px 0 3px 5px;
+}
+
+.isi-container-harga h3 span {
+     font-size: 13px;
+}
+
+.isi-container-harga h2 {
+     font-size: 25px;
+     font-weight: 600;
+     margin-bottom: 0;
+     margin-left: 5px;
+     margin-top: 1px;
+}
+
+.rincian-produk {
+     width: 100%;
+     display: grid;
+     margin-top: 30px;
+     grid-template-columns: 1fr;
+}
+
+.isi-rincian-produk {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+}
+
+.isi-rincian-produk h5 {
+     width: 120px;
+     font-size: 14px;
+}
+
+.isi-rincian-produk p {
+     font-size: 14px;
+}
+
+.tambah-keranjang {
+     width: 100%;
+     height: 50px;
+     margin-top: 30px;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+
+.masukkan-keranjang {
+     padding: 0 25px;
+     height: 100%;
+     box-sizing: border-box;
+     margin-right: 15px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     border: 1px solid black;
+}
+
+.masukkan-keranjang i {
+     font-size: 18px;
+     font-weight: 600;
+}
+
+.masukkan-keranjang p {
+     font-size: 15px;
+     font-weight: 600;
+}
+
+.button-tambah-keranjang {
+     width: 100%;
+     height: 100%;
+     display: flex;
+}
+
+.beli-sekarang {
+     width: 150px;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     border: 1px solid black;
+}
+
+.liat-konten {
+     width: 100%;
+     margin-top: 30px;
+     box-shadow: 0 0 6px 0 rgb(99, 99, 99);
+     border-radius: 10px;
+}
+
+.liat-konten-title {
+     width: 100%;
+     height: 65px;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     padding: 0 30px;
+     justify-content: space-between;
+     border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.liat-konten-title p {
+     font-size: 17px;
+     font-weight: 600;
+
+}
+
+.isi-konten {
+     width: 100%;
+     padding: 30px;
+     box-sizing: border-box;
+}
+
+.isi-konten p {
+     font-size: 15px;
+}
+
+.container-isi-rating {
+     width: 100%;
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-gap: 20px;
+}
+
+.isi-rating {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+}
+
+.isi-rating img {
+     width: 40px;
+     height: 40px;
+     border-radius: 40px;
+     object-fit: cover;
+}
+
+.text-isi-rating {
+     flex: 1;
+     margin-left: 20px;
+}
+
+.nama-rating {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+
+.nama-rating h5 {
+     font-size: 15px;
+}
+
+.nama-rating p {
+     font-size: 12px;
+}
+
+.bintang-rating {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     margin-top: 5px;
+}
+
+.bintang-rating i {
+     font-size: 13px;
+}
+
+.desc-rating {
+     font-size: 13px;
+     margin-top: 6px;
+     font-weight: 400;
+}
