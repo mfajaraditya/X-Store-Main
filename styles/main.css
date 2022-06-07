@@ -5,6 +5,7 @@
 @import "./components/produk.css";
 @import "./components/akun.css";
 @import "./components/belum-bayar.css";
+@import "./components/kategori.css";
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 * {

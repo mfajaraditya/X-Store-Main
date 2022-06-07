@@ -1,0 +1,59 @@
+.list-produk {
+  box-sizing: border-box;
+}
+
+.list-produk img {
+  height: 120px;
+}
+
+.text-list-produk {
+  padding: 7px 10px 10px 10px;
+}
+
+.title-kategori {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30px;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+.title-kategori p {
+  font-size: 22px;
+}
+
+.title-kategori span {
+  font-size: 22px;
+  color: #fb6000;
+}
+
+.container-produk {
+  width: 100%;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 15px;
+}
+
+.container-judul-produk {
+  height: 37px;
+}
+
+.container-judul-produk p {
+  font-size: 12px;
+}
+
+.container-harga-produk h1 {
+  font-size: 13px;
+}
+
+.container-harga-produk span {
+  font-size: 11px;
+}
+
+.container-harga-produk p {
+  font-size: 9px;
+}
