@@ -25,13 +25,13 @@
 }
 
 .container-gambar-judul{
-     width: 450px;
+     width: 100%;
      overflow: hidden;
      float: left;
 }
 
 .container-judul {
-     width: calc(100% - 95px);
+     width: 70%;
      float: right;
 }
 
