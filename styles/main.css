@@ -8,6 +8,7 @@
 @import "./components/kategori.css";
 @import "./components/edit.css";
 @import "./components/keranjang.css";
+@import "./components/checkout.css";
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 * {

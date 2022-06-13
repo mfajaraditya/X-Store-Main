@@ -1,0 +1,103 @@
+.checkout {
+     width: 100%;
+     margin-top: 3px;
+}
+
+.alamat {
+     width: 100%;
+     padding: 30px;
+     box-sizing: border-box;
+}
+
+.alamat h1 {
+     font-size: 17px;
+     font-weight: 600;
+}
+
+.alamat p {
+     font-size: 15px;
+     margin-top: 15px;
+}
+
+.container-alamat {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.container-alamat h5 {
+     font-size: 16px;
+     cursor: pointer;
+}
+
+.detail-checkout {
+     width: 100%;
+     padding: 30px;
+     margin-top: 15px;
+     box-sizing: border-box;
+}
+
+.detail-checkout h1 {
+     font-size: 17px;
+}
+
+.container-checkout {
+     width: 100%;
+     margin-top: 30px;
+     padding-bottom: 30px;
+     display: flex;
+     overflow: hidden;
+}
+
+.detail {
+     width: 600px;
+     float: left;
+}
+
+.detail img {
+     width: 80px;
+     height: 80px;
+     object-fit: cover;
+     border-radius: 3px;
+     float: left;
+}
+
+.nama-detail {
+     float: right;
+}
+
+.nama-detail h1 {
+     font-size: 15px;
+     margin-bottom: 8px;
+}
+
+.nama-detail p {
+     font-size: 13px;
+     margin-top: 3px;
+}
+
+.container-harga {
+     float: right;
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-end;
+     align-items: center;
+}
+
+.harga {
+     text-align: center;
+     margin-left: 50px;
+}
+
+.harga p {
+     font-size: 13px;
+}
+
+.harga h5 {
+     font-size: 16px;
+}
+
+
+
