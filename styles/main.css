@@ -130,3 +130,9 @@ a {
 .title-iklan-fs span {
      font-size: 18px;
 }
+
+.tidak-ada-hasil {
+     font-size: 14px;
+     text-align: center;
+     margin: 20px 0;
+}
