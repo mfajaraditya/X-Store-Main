@@ -1,126 +1,148 @@
 @import "./belum-bayar.css";
 .profil {
-     width: 100%;
-     margin-top: 30px;
-     display: flex;
-     flex-direction: row;
-     align-items: start;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
 }
 
 .info-akun {
-     width: 320px;
-     padding: 20px;
-     padding-bottom: 1px;
-     margin-right: 40px;
-     box-sizing: border-box;
-     background-color: rgb(200, 200, 200);
-
+  width: 320px;
+  padding: 20px;
+  padding-bottom: 1px;
+  margin-right: 40px;
+  box-sizing: border-box;
+  background-color: rgb(200, 200, 200);
 }
 
 .info-akun2 {
-     width: 100%;
-     display: flex;
-     flex-direction: row;
-     align-items: center;
-padding-bottom: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 20px;
 }
 
 .info-akun2 img {
-     width: 45px;
-     height: 45px;
-     object-fit: cover;
-     border-radius: 45px;
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 45px;
 }
 
 .container-data-user {
-     flex: 1;
-     margin-left: 16px;
-
+  flex: 1;
+  margin-left: 16px;
 }
 
 .container-data-user h1 {
-     font-size: 15px;
-     font-weight: 500;
+  font-size: 15px;
+  font-weight: 500;
 }
 
 .container-data-user p {
-     font-size: 12px;
-     margin-top: 1px;
+  font-size: 12px;
+  margin-top: 1px;
 }
 
 .menu-info-akun {
-     width: 100%;
-     display: grid;
-     grid-template-columns: 1fr;
-     grid-gap: 1px;
-     margin-top: 20px;
-
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1px;
+  margin-top: 20px;
 }
 
 .content-menu-info-akun {
-     width: 100%;
-     height: 45px;
-     display: flex;
-     flex-direction: row;
-     align-items: center;
-     cursor: pointer;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
 }
 
 .content-menu-info-akun:hover {
-     color: red;
+  color: red;
 }
 
 .tab-menu {
-     flex: 1;
+  flex: 1;
 }
 
 .container-pilih-menu {
-     width: 100%;
+  width: 100%;
 }
 
 .container-pilih-menu2 {
-     width: 100%;
-     overflow: auto;
+  width: 100%;
+  overflow: auto;
 }
 
 .pilih-menu {
-     width: 100%;
-     background-color: rgb(200, 200, 200);
-     display: flex;
-     flex-direction: row;
+  width: 100%;
+  background-color: rgb(200, 200, 200);
+  display: flex;
+  flex-direction: row;
 }
 
 .content-pilih-menu {
-     flex: 1;
-     padding: 15px 0;
-     display: flex;
-     justify-content: center;
-     font-size: 15px;
-     border-top: 2px solid white;
-     border-bottom: 2px solid white;
+  flex: 1;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
 }
 
 .content-pilih-menu-active {
-     flex: 1;
-     padding: 15px 0;
-     display: flex;
-     color: blue;
-     justify-content: center;
-     font-size: 15px;
-     border-top: 2px solid white;
-     border-bottom: 2px solid red;
+  flex: 1;
+  padding: 15px 0;
+  display: flex;
+  color: blue;
+  justify-content: center;
+  font-size: 15px;
+  border-top: 2px solid white;
+  border-bottom: 2px solid red;
+}
+
+.menu-info-akun-mobile {
+  display: none;
 }
 
 .tidak-ada-pesanan {
-     width: 100%;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     padding: 120px 0;
-   }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 0;
+}
 
-   .tidak-ada-pesanan p {
-     font-size: 15px;
-     text-align: center;
-     margin-top: 15px;
-   }
+.tidak-ada-pesanan p {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+@media screen and (max-width: 430px) {
+  header {
+    display: none;
+  }
+
+  .profil {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .menu-info-akun-mobile {
+    display: flex;
+  }
+
+  .tab-menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+  }
+}
