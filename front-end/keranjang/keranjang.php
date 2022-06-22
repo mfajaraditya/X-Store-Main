@@ -1,3 +1,6 @@
+<?php
+include '../config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,117 +11,73 @@
       src="https://kit.fontawesome.com/79bd89534b.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="../assets/css/components/keranjang.css">
     <title>X-Store</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="navigation-bar">
-          <nav>
-            <ul class="nav-bar">
-              <li class="nav-list">
-                <a href="about.html" class="nav-list">Tentang Kami</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="header">
-          <div class="logo-header">
-            <p><a href="./index.html">X-STORE</a></p>
-          </div>
-          <div class="box-search-header">
-            <div class="search-header">
-              <input
-                type="text"
-                placeholder="Cari disini...."
-                id="search-header"
-              />
-              <button>
-                <a href="search.html"
-                  ><i class="fa-solid fa-magnifying-glass"></i
-                ></a>
-              </button>
-            </div>
-          </div>
-          <div class="menu-header">
-            <div class="profile-menu-header">
-              <a href="daftar.html">Daftar</a>
-              <p>|</p>
-              <a href="masuk.html">Masuk</a>
-              <p>|</p>
-              <a href="keranjang.html">Cart</a>
-              <p>|</p>
-              <a href="akun.html">
-                <img src="user.png" alt="" href="akun.html" class="user" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+  <?php include '../components/header.php'; ?>
     <main>
       <div class="container">
+        <?php
+        $keranjang = $server->query("SELECT * FROM `kategori`, `keranjang`, `iklan` WHERE keranjang.id_iklan=iklan.id AND iklan.id_kategori=kategori.id ORDER BY `keranjang`.`id` DESC");
+        $cek_keranjang = mysqli_num_rows($keranjang);
+        ?>
         <div class="header-keranjang">
-          <h1>Keranjang Belanja Anda</h1>
+          <h1>Keranjang Belanja Anda Sebanyak: <span><?php echo $cek_keranjang; ?></span></h1>
         </div>
         <div class="container-isi">
-          <div class="content-keranjang">
+          <?php
+          if ($cek_keranjang) {
+            while ($data_keranjang = mysqli_fetch_array($keranjang)){
+              $hitung_diskon = ($data_keranjang['diskon_k'] / 100) * $data_keranjang['harga_k'];
+              $harga_diskon = ($data_keranjang['harga_k'] - $hitung_diskon) * $data_keranjang['jumlah'];
+              $exp_gambar = explode(',', $data_keranjang['gambar']);
+          ?>
+          <div class="content-keranjang" id="isi_cart<?php echo $data_keranjang['id']; ?>">
             <div class="container-gambar">
-              <img src="bg-1.jpg" alt="" />
+              <img src="../assets/images/<?php echo $exp_gambar[0]; ?>" alt="" >
               <div class="container-judul">
-                <h1>Test test</h1>
-                <p>Kategori <span>Fashion</span></p>
-                <p>Total Produk <span>3</span></p>
+                <h1><?php echo $data_keranjang['judul'];  ?></h1>
+                <p>Kategori <span><?php echo $data_keranjang['nama']; ?></span></p>
+                <p>Total Produk <span><?php echo $data_keranjang['jumlah']; ?></span></p>
               </div>
             </div>
             <div class="container-detail">
               <div class="container-harga">
                 <p>Total Harga</p>
-                <h1><span>Rp</span> 200000</h1>
+                <h1><span>Rp</span><?php echo number_format($harga_diskon_fs, 0, ".", "."); ?></h1>
               </div>
-              <div class="bayar">
-                <a href="checkout.html">Checkout</a>
-              </div>
-            </div>
-          </div>
-          <div class="content-keranjang">
-            <div class="container-gambar">
-              <img src="bg-1.jpg" alt="" />
-              <div class="container-judul">
-                <h1>Test test</h1>
-                <p>Kategori <span>Fashion</span></p>
-                <p>Total Produk <span>3</span></p>
-              </div>
-            </div>
-            <div class="container-detail">
-              <div class="container-harga">
-                <p>Total Harga</p>
-                <h1><span>Rp</span> 200000</h1>
-              </div>
-              <div class="bayar">
-                <a href="checkout.html">Checkout</a>
+              <div class="bayar" id="button_co<?php echo $data_keranjang['id']; ?>" onclick="checkout('<?php echo $cart_data['id']; ?>', 'idkontol')">Checkout</div>
+              <div class="box_remove_cart" onclick="removecart(<?php echo $data_keranjang['id']; ?>)">
+                <i class="ri-delete-bin-line" id="icon_remove_cart<?php echo $data_keranjang['id']; ?>"></i>
               </div>
             </div>
           </div>
-          <!-- <div class="keranjang-kosong">
-            <p>Belum ada produk di keranjang</p>
-          </div> -->
+          <?php
+            }
+          } else {
+              ?>
+              <div class="box_cart_0">
+                <p class="p_cart_0">Belum Ada Produk Di Keranjang</p>
+              </div>
+            <?php
+            }
+            ?>
         </div>
       </div>
       <div class="bottom-nav">
         <div class="bot-nav">
-          <a href="index.html">
+          <a href="../">
             <div class="content-nav">
               <h5>Home</h5>
             </div>
           </a>
-          <a href="keranjang.html">
+          <a href="./keranjang.php">
             <div class="content-nav">
               <h5>Cart</h5>
             </div>
           </a>
-          <a href="akun.html">
+          <a href="../akun/akun.php">
             <div class="content-nav">
               <h5>Akun</h5>
             </div>
@@ -126,10 +85,6 @@
         </div>
       </div>
     </main>
-    <footer>
-      <div class="container">
-        <p class="copyright">Copyright &copy; 2022 - X-Store</p>
-      </div>
-    </footer>
+    <?php include '../components/footer.php'; ?>
   </body>
 </html>
