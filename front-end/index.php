@@ -1,3 +1,6 @@
+<?php
+include "./config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,111 +11,31 @@
       src="https://kit.fontawesome.com/79bd89534b.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./styles/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/main.css" />
     <title>X-Store</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="navigation-bar">
-          <nav>
-            <ul class="nav-bar">
-              <li class="nav-list">
-                <a href="about.html" class="nav-list">Tentang Kami</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="header">
-          <div class="logo-header">
-            <p>
-              <a href="./index.html"><img src="logo.png" alt="" /></a>
-            </p>
-          </div>
-          <div class="box-search-header">
-            <div class="search-header">
-              <input
-                type="text"
-                placeholder="Cari disini...."
-                id="search-header"
-              />
-              <button>
-                <a href="search.html"
-                  ><i class="fa-solid fa-magnifying-glass"></i
-                ></a>
-              </button>
-            </div>
-          </div>
-          <div class="menu-header">
-            <div class="profile-menu-header">
-              <a href="daftar.html">Daftar</a>
-              <p>|</p>
-              <a href="masuk.html">Masuk</a>
-              <p>|</p>
-              <a href="keranjang.html">Cart</a>
-              <p>|</p>
-              <a href="akun.html">
-                <img src="user.png" alt="" href="akun.html" class="user" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+    <?php include './components/header.php'; ?>
     <main>
       <div class="container-kategori">
         <div class="kategori">
-          <a href="kategori.html">
-            <div class="content-kategori">
-              <img src="assets/icons/elektronik.svg" />
-              <p>Elektronik</p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="content-kategori">
-              <img src="assets/icons/handphone.svg" />
-              <p>Handphone</p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="content-kategori">
-              <img src="assets/icons/komputer.svg" />
-              <p>Komputer</p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="content-kategori">
-              <img src="assets/icons/otomotif.svg" />
-              <p>Otomotif</p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="content-kategori">
-              <img src="assets/icons/pakaian-pria.svg" />
-              <p>Pakaian Pria</p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="content-kategori">
-              <img src="assets/icons/pakaian-wanita.svg" />
-              <p>Pakaian Wanita</p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="content-kategori">
-              <img src="assets/icons/sepatu.svg" />
-              <p>Sepatu</p>
-            </div>
-          </a>
-          <a href="#">
-            <div class="content-kategori">
-              <img src="assets/icons/tas.svg" />
-              <p>Tas</p>
-            </div>
-          </a>
+        <?php
+            $kategori = $server->query("SELECT * FROM `kategori`");
+            while ($kategori_data = mysqli_fetch_assoc($kategori)){
+              ?>
+              <a href="<?php echo $url; ?>kategori/kategori/<?php echo $kategori_data['id']; ?>">
+              <div class="content-kategori">
+                <img src="assets/icons/<?php echo $kategori_data['icon']; ?>" />
+                <p><?php echo $kategori_data['nama']; ?></p>
+              </div>
+            </a>
+            <?php 
+              }
+            ?>
         </div>
       </div>
-      <div class="container">
+      <!-- <div class="container">
         <div class="flash-sale">
           <div class="title-fs">
             <div class="container-title-fs">
@@ -325,12 +248,8 @@
             </div>
           </a>
         </div>
-      </div>
+      </div> -->
     </main>
-    <footer>
-      <div class="container">
-        <p class="copyright">Copyright &copy; 2022 - X-Store</p>
-      </div>
-    </footer>
+  <?php include './components/footer.php'; ?>
   </body>
 </html>
