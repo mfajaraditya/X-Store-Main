@@ -2,4 +2,4 @@
 
 Project Capstone Program Kampus Merdeka MSIB Batch II 
 
-Untuk sementara, akses ke index.html hanya memakai ekstensi Visual Studio Code yaitu <b>Live Server</b>
+Untuk sementara, akses ke index.php pada Front-End dengan menggunakan aplikasi tambahan yaitu <b>XAMPP</b>
