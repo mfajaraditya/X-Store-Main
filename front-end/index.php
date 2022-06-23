@@ -249,7 +249,8 @@ include "./config.php";
           </a>
         </div>
       </div> -->
-    </main>
-  <?php include './components/footer.php'; ?>
+      <?php include '../components/bottom-nav.php'; ?>
+  </main>
+  <?php include '../components/footer.php'; ?>
   </body>
 </html>

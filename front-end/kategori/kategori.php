@@ -51,7 +51,8 @@ $kategori_data = mysqli_fetch_assoc($kategori);
                ?>      
           </div>
      </div>
-</main>
-<?php include '../components/footer.php'; ?>
+     <?php include '../components/bottom-nav.php'; ?>
+  </main>
+  <?php include '../components/footer.php'; ?>
   </body>
 </html>

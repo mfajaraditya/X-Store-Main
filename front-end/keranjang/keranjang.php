@@ -65,26 +65,8 @@ include '../config.php';
             ?>
         </div>
       </div>
-      <div class="bottom-nav">
-        <div class="bot-nav">
-          <a href="../">
-            <div class="content-nav">
-              <h5>Home</h5>
-            </div>
-          </a>
-          <a href="./keranjang.php">
-            <div class="content-nav">
-              <h5>Cart</h5>
-            </div>
-          </a>
-          <a href="../akun/akun.php">
-            <div class="content-nav">
-              <h5>Akun</h5>
-            </div>
-          </a>
-        </div>
-      </div>
-    </main>
-    <?php include '../components/footer.php'; ?>
+      <?php include '../components/bottom-nav.php'; ?>
+  </main>
+  <?php include '../components/footer.php'; ?>
   </body>
 </html>

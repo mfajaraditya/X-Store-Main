@@ -12,53 +12,7 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="navigation-bar">
-          <nav>
-            <ul class="nav-bar">
-              <li class="nav-list">
-                <a href="about.html" class="nav-list">Tentang Kami</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="header">
-          <div class="logo-header">
-            <p>
-              <a href="./index.html"><img src="logo.png" alt="" /></a>
-            </p>
-          </div>
-          <div class="box-search-header">
-            <div class="search-header">
-              <input
-                type="text"
-                placeholder="Cari disini...."
-                id="search-header"
-              />
-              <button>
-                <a href="search.html"
-                  ><i class="fa-solid fa-magnifying-glass"></i
-                ></a>
-              </button>
-            </div>
-          </div>
-          <div class="menu-header">
-            <div class="profile-menu-header">
-              <a href="daftar.html">Daftar</a>
-              <p>|</p>
-              <a href="masuk.html">Masuk</a>
-              <p>|</p>
-              <a href="keranjang.html">Cart</a>
-              <p>|</p>
-              <a href="akun.html">
-                <img src="user.png" alt="" href="akun.html" class="user" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+  <?php include '../components/header.php'; ?>
     <main>
       <div class="container">
         <div class="profil">
@@ -175,11 +129,8 @@
           </a>
         </div>
       </div>
-    </main>
-    <footer-bar>
-      <div class="container">
-        <p class="copyright">Copyright &copy; 2022 - X-Store</p>
-      </div>
-    </footer-bar>
+      <?php include '../components/bottom-nav.php'; ?>
+  </main>
+  <?php include '../components/footer.php'; ?>
   </body>
 </html>
