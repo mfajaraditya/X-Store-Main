@@ -23,18 +23,18 @@ if ($produk_data) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/79bd89534b.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="../../assets/css/components/produk.css">
-    <title>Produk</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script 
+  src="https://kit.fontawesome.com/79bd89534b.js" 
+  crossorigin="anonymous"
+  ></script>
+  <link rel="stylesheet" href="../../assets/css/components/produk.css">
+  <title>Produk</title>
+</head>
+<body>
   <?php include '../components/header.php'; ?>
   <main>
     <div class="container">
@@ -219,5 +219,5 @@ if ($produk_data) {
     <?php include '../components/bottom-nav.php'; ?>
   </main>
   <?php include '../components/footer.php'; ?>
-  </body>
+</body>
 </html>

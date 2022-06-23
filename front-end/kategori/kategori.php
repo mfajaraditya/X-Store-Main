@@ -14,7 +14,7 @@ $kategori_data = mysqli_fetch_assoc($kategori);
       src="https://kit.fontawesome.com/79bd89534b.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="../assets/css/components/kategori.css">
+    <link rel="stylesheet" href="../../assets/css/components/kategori.css">
     <title>X-Store</title>
   </head>
   <body>
