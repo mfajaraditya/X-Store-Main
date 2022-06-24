@@ -28,17 +28,26 @@
     </div>
     <div class="menu-header">
       <div class="profile-menu-header">
+        <?php
+        if (isset($_COOKIE['login'])){
+        ?>
+        <a href="<?php echo $url; ?>keranjang/keranjang">Cart</a>
+        <p>|</p>
+        <a href="<?php echo $url; ?>akun/akun">
+          <img src="<?php echo $url; ?>assets/images/user.png" class="user" />
+        </a>
+        <?php
+        } else {
+        ?> 
         <a href="<?php echo $url; ?>daftar-masuk/daftar">Daftar</a>
         <p>|</p>
-        <a href="<?php echo $url; ?>daftar-masuk/masuk.php">Masuk</a>
-        <p>|</p>
-        <a href="<?php echo $url; ?>keranjang/keranjang.php">Cart</a>
-        <p>|</p>
-        <a href="<?php echo $url; ?>akun/akun.php">
-          <img src="user.png" class="user" />
-        </a>
+        <a href="<?php echo $url; ?>daftar-masuk/masuk">Masuk</a>
+        <?php
+        }
+        ?>
       </div>
     </div>
   </div>
   </div>
 </header>
+<script src="<?php echo $url; ?>assets/js/header.js"></script>
