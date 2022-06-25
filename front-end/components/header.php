@@ -18,8 +18,8 @@
     </a>
 
     <div class="box-search-header">
-      <div class="search-header">
-        <input type="text" placeholder="<?php echo $placeholder_search; ?>" id="search-header" oninput="SearchHeader('<?php echo $url; ?>')">
+      <div class="search_header">
+        <input type="text" placeholder="<?php echo $placeholder_search; ?>" id="search_header" oninput="SearchHeader('<?php echo $url; ?>')">
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
       <div class="res_search_header" id="res_search_header">
