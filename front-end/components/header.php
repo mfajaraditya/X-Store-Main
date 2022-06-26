@@ -23,6 +23,7 @@
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
       <div class="res_search_header" id="res_search_header">
+        <!-- <center><img src="<?php echo $url; ?>assets/icons/loading-o.svg" class="loading_res_search_header" id="loading_res_search_header"></center> -->
         <div id="isi_res_search_header"></div>
       </div>
     </div>

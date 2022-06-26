@@ -9,32 +9,20 @@
      border-radius: 10px;
 }
 
-.detail-produk {
+.detail_produk {
      width: 100%;
      display: flex;
      flex-direction: row;
 }
 
-.foto-produk {
+.foto_produk {
      width: 400px;
 }
 
-.foto-produk img {
+.foto_produk img {
      width: 100%;
      height: 400px;
      object-fit: cover;
-}
-
-.desc-produk {
-     flex: 1;
-     margin-left: 30px;
-}
-
-.desc-produk h1 {
-     font-size: 23px;
-     font-weight: 600;
-     margin-top: -5px;
-     color: black
 }
 
 .container-rate-produk {
@@ -59,6 +47,7 @@
      font-size: 17px;
      font-weight: 600;
      margin-right: 5px;
+     margin-top: 1px;
 }
 
 .isi-container-rate-produk i {
@@ -74,6 +63,8 @@
 
 .isi-container-rate-produk p {
      font-size: 17px;
+     margin-right: 5px;
+     margin-top: 1px;
 }
 
 .container-harga {
@@ -130,7 +121,7 @@
      font-size: 14px;
 }
 
-.tambah-keranjang {
+.tambah_keranjang {
      width: 100%;
      height: 50px;
      margin-top: 30px;
@@ -139,42 +130,11 @@
      justify-content: space-between;
 }
 
-.masukkan-keranjang {
-     padding: 0 25px;
-     height: 100%;
-     box-sizing: border-box;
-     margin-right: 15px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     cursor: pointer;
-     border: 1px solid black;
-}
-
-.masukkan-keranjang i {
-     font-size: 18px;
-     font-weight: 600;
-}
-
-.masukkan-keranjang p {
-     font-size: 15px;
-     font-weight: 600;
-}
-
-.button-tambah-keranjang {
+.button_tambah_keranjang {
      width: 100%;
      height: 100%;
      display: flex;
-}
-
-.beli-sekarang {
-     width: 150px;
-     height: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     cursor: pointer;
-     border: 1px solid black;
+     font-display: row;
 }
 
 .liat-konten {
@@ -209,6 +169,7 @@
 
 .isi-konten p {
      font-size: 15px;
+     margin-top: -4px;
 }
 
 .container-isi-rating {
@@ -267,4 +228,352 @@
      font-size: 13px;
      margin-top: 6px;
      font-weight: 400;
+}
+
+/* SPEK PRODUK */
+
+.box_pm_jumlah {
+    height: 28px;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+}
+
+.box_button_jumlah {
+    width: 28px;
+    height: 28px;
+    background-color: #fb6000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box_button_jumlah img {
+    width: 10px;
+    height: 10px;
+}
+
+.box_hasil_jumlah {
+    width: 50px;
+    height: 28px;
+}
+
+.box_hasil_jumlah p {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--black);
+    text-align: center;
+    line-height: 28px;
+}
+
+.box_hasil_jumlah input {
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    width: 100%;
+    padding: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--black);
+    text-align: center;
+    line-height: 28px;
+    border: 0;
+    background-color: transparent;
+}
+
+.masukan_keranjang {
+    padding: 0 25px;
+    height: 100%;
+    box-sizing: border-box;
+    margin-right: 15px;
+    border: 2px solid #fb6000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.masukan_keranjang i {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fb6000;
+    margin-right: 8px;
+}
+
+.masukan_keranjang p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fb6000;
+}
+
+.masukan_keranjang img {
+    width: 20px;
+    height: 20px;
+    margin: 0 65px;
+}
+
+#hapus_keranjang {
+    display: none;
+}
+
+.beli_sekarang {
+    width: 150px;
+    height: 100%;
+    background-color: #fb6000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.beli_sekarang p {
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}
+
+.beli_sekarang img {
+    width: 20px;
+    height: 20px;
+}
+
+.back_add_card {
+    display: none;
+    width: 100%;
+    height: 55px;
+    margin-top: 15px;
+}
+
+#res {
+    display: none;
+}
+
+.back_varian_produk {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.varian_produk {
+    width: 450px;
+    padding: 5px 25px 25px 25px;
+    box-sizing: border-box;
+    background-color:white;
+    border-radius: 3px;
+    position: relative;
+}
+
+.harga_varian_produk {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid grey;
+}
+
+.harga_varian_produk h1 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fb6000;
+}
+
+.harga_varian_produk p {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}
+
+.varian_ukuran {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid grey;
+}
+
+.varian_ukuran h1 {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}
+
+.box_select_varian {
+    width: 100%;
+    overflow: hidden;
+}
+
+.isi_box_select_varian {
+    float: left;
+    padding: 5px 17px;
+    background-color: rgb(200, 200, 200);
+    margin-right: 15px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+
+.isi_box_select_varian_active {
+    float: left;
+    padding: 5px 17px;
+    background-color: var(--orange);
+    margin-right: 15px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.box_button_varian {
+    margin-top: 25px;
+    display: none;
+}
+
+.close_varian_produk {
+    font-size: 23px;
+    color: var(--white);
+    position: absolute;
+    top: 0px;
+    right: -30px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media only screen and (max-width: 900px) {
+    .produk {
+        margin-top: 0;
+        padding: 0;
+    }
+    .detail_produk {
+        flex-direction: column;
+    }
+    .foto_produk {
+        width: 100%;
+    }
+    .desc_produk {
+        margin: 0;
+        padding: 15px;
+    }
+    .foto_produk img {
+        height: 300px;
+    }
+    .back_add_card {
+        display: block;
+    }
+    .tambah-keranjang {
+        height: 0;
+        margin-top: 0;
+    }
+    .box_pm_jumlah {
+        height: 30px;
+    }
+    .box_button_jumlah {
+        width: 30px;
+        height: 30px;
+    }
+    .box_button_jumlah img {
+        width: 10px;
+        height: 10px;
+    }
+    .box_hasil_jumlah {
+        width: 50px;
+        height: 30px;
+    }
+    .box_hasil_jumlah input {
+        font-size: 13px;
+        line-height: 30px;
+    }
+    .button_tambah_keranjang {
+        width: 100%;
+        height: 53px;
+        margin: 0;
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        box-sizing: border-box;
+        margin-left: -15px;
+        -webkit-box-shadow: 0px -1px 2px 0px rgba(237, 237, 237, 1);
+        -moz-box-shadow: 0px -1px 2px 0px rgba(237, 237, 237, 1);
+        box-shadow: 0px -1px 2px 0px rgba(237, 237, 237, 1);
+    }
+    .masukan_keranjang {
+        padding: 0 15px;
+        margin-right: 0px;
+        border: 0;
+    }
+    .beli_sekarang {
+        flex: 1;
+        padding: 0;
+    }
+    .masukan_keranjang p {
+        font-size: 14px;
+    }
+    .beli_sekarang p {
+        font-size: 14px;
+    }
+    .desc_produk h1 {
+        font-size: 17px;
+    }
+    .container-rate-produk {
+        margin-top: 15px;
+    }
+    .container-rate-produk span {
+        margin: 0 10px;
+    }
+    .isi-container-rate-produk h5 {
+        font-size: 13px;
+    }
+    .isi-container-rate-produki {
+        font-size: 13px;
+    }
+    .isi-container-rate-produk h4 {
+        font-size: 13px;
+    }
+    .isi-container-rate-produk p {
+        font-size: 13px;
+    }
+    .container-harga {
+        margin-top: 20px;
+    }
+    .isi-container-harga h2 span {
+        font-size: 15px;
+    }
+    .isi-container-harga h2 {
+        font-size: 20px;
+    }
+    .isi-container-harga h3 {
+        font-size: 15px;
+    }
+    .isi-container-harga h3 span {
+        font-size: 12px;
+    }
+    .isi_harga_fs i {
+        font-size: 16px;
+    }
+    .isi_harga_fs p {
+        font-size: 16px;
+    }
+    .isi-konten {
+        padding: 15px;
+    }
+    .isi-konten p {
+        font-size: 13px;
+    }
+    .back_varian_produk {
+        align-items: flex-end;
+    }
+    .varian_produk {
+        width: 100%;
+        border-radius: 3px 3px 0 0;
+    }
+    .close_varian_produk{
+        top: -30px;
+        right: 8px;
+    }
 }
