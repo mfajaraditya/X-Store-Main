@@ -3,70 +3,78 @@ include '../config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/79bd89534b.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="../assets/css/components/keranjang.css">
-    <title>X-Store</title>
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/79bd89534b.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/components/keranjang.css">
+  <title>X-Store</title>
+</head>
+<body>
   <?php include '../components/header.php'; ?>
-    <main>
-      <div class="container">
-        <?php
-        $keranjang = $server->query("SELECT * FROM `kategori`, `keranjang`, `iklan` WHERE keranjang.id_iklan=iklan.id AND iklan.id_kategori=kategori.id ORDER BY `keranjang`.`id` DESC");
-        $cek_keranjang = mysqli_num_rows($keranjang);
-        ?>
-        <div class="header-keranjang">
-          <h1>Keranjang Belanja Anda Sebanyak: <span><?php echo $cek_keranjang; ?></span></h1>
+  <main>
+    <div class="container">
+      <?php
+      if (isset($_COOKIE['login'])) {
+        $select_cart = $server->query("SELECT * FROM `kategori`, `keranjang`, `iklan` WHERE keranjang.id_user='$iduser' AND keranjang.id_iklan=iklan.id AND iklan.id_kategori=kategori.id ORDER BY `keranjang`.`id` DESC");
+        $cek_cart = mysqli_num_rows($select_cart);
+      ?>
+        <div class="header_cart" id="header_cart">
+          <p>Keranjang Belanja Anda Sebanyak: <span><?php echo $cek_cart; ?></span></p>
         </div>
-        <div class="container-isi">
+        <div class="box_isi_cart">
           <?php
-          if ($cek_keranjang) {
-            while ($data_keranjang = mysqli_fetch_array($keranjang)){
-              $hitung_diskon = ($data_keranjang['diskon_k'] / 100) * $data_keranjang['harga_k'];
-              $harga_diskon = ($data_keranjang['harga_k'] - $hitung_diskon) * $data_keranjang['jumlah'];
-              $exp_gambar = explode(',', $data_keranjang['gambar']);
+          if ($cek_cart) {
+            while ($cart_data = mysqli_fetch_array($select_cart)) {
+              $hitung_diskon_fs = ($cart_data['diskon_k'] / 100) * $cart_data['harga_k'];
+              $harga_diskon_fs = ($cart_data['harga_k'] - $hitung_diskon_fs) * $cart_data['jumlah'];
+              $exp_gambar_cd = explode(',', $cart_data['gambar']);
           ?>
-          <div class="content-keranjang" id="isi_cart<?php echo $data_keranjang['id']; ?>">
-            <div class="container-gambar">
-              <img src="../assets/images/<?php echo $exp_gambar[0]; ?>" alt="" >
-              <div class="container-judul">
-                <h1><?php echo $data_keranjang['judul'];  ?></h1>
-                <p>Kategori <span><?php echo $data_keranjang['nama']; ?></span></p>
-                <p>Total Produk <span><?php echo $data_keranjang['jumlah']; ?></span></p>
-              </div>
-            </div>
-            <div class="container-detail">
-              <div class="container-harga">
-                <p>Total Harga</p>
-                <h1><span>Rp</span><?php echo number_format($harga_diskon_fs, 0, ".", "."); ?></h1>
-              </div>
-              <div class="bayar" id="button_co<?php echo $data_keranjang['id']; ?>" onclick="checkout('<?php echo $cart_data['id']; ?>', 'idkontol')">Checkout</div>
-              <div class="box_remove_cart" onclick="removecart(<?php echo $data_keranjang['id']; ?>)">
-                <i class="ri-delete-bin-line" id="icon_remove_cart<?php echo $data_keranjang['id']; ?>"></i>
-              </div>
-            </div>
-          </div>
-          <?php
-            }
-          } else {
-              ?>
-              <div class="box_cart_0">
-                <p class="p_cart_0">Belum Ada Produk Di Keranjang</p>
+              <div class="isi_cart" id="isi_cart<?php echo $cart_data['id']; ?>">
+                <div class="box_gambar_judul">
+                  <img src="../assets/images/<?php echo $exp_gambar_cd[0]; ?>" alt="">
+                  <div class="box_judul_ic">
+                    <h1><?php echo $cart_data['judul']; ?></h1>
+                    <p>Kategori <span><?php echo $cart_data['nama']; ?></span></p>
+                    <p>Total Produk <span><?php echo $cart_data['jumlah']; ?></span></p>
+                  </div>
+                </div>
+                <div class="box_detail_isi_cart">
+                  <div class="box_total_harga">
+                    <p>Total Harga</p>
+                    <h1><span>Rp</span> <?php echo number_format($harga_diskon_fs, 0, ".", "."); ?></h1>
+                  </div>
+                  <div class="bayar" id="button_checkout<?php echo $cart_data['id']; ?>" onclick="checkout('<?php echo $cart_data['id']; ?>', 'idkontol')">Checkout</div>
+                  <div class="bayar loading_checkout" id="loading_checkout<?php echo $cart_data['id']; ?>"><img src="../assets/icons/loading-w.svg" alt=""></div>
+                  <div class="box_remove_cart" onclick="removecart(<?php echo $cart_data['id']; ?>)">
+                    <i class="ri-delete-bin-line" id="icon_remove_cart<?php echo $cart_data['id']; ?>"></i>
+                    <img src="../assets/icons/loading-o.svg" id="loading_remove_cart<?php echo $cart_data['id']; ?>">
+                  </div>
+                </div>
               </div>
             <?php
             }
+          } else {
             ?>
+            <div class="box_cart_0">
+              <p class="p_cart_0">Belum Ada Produk Di Keranjang</p>
+            </div>
+          <?php
+          }
+          ?>
         </div>
-      </div>
-      <?php include '../components/bottom-nav.php'; ?>
+      <?php
+      } else {
+        include '../components/belum-login.php';
+      }
+      ?>
+    </div>
+    <div id="res"></div>
+    <?php include '../components/bottom-nav.php'; ?>
   </main>
   <?php include '../components/footer.php'; ?>
-  </body>
+  <script src="../assets/js/keranjang.js"></script>
+</body>
 </html>

@@ -10,7 +10,6 @@ if ($page_product == 'produk view') {
 ?>
     <script>
         masukan_keranjang2.style.display = 'flex';
-        loading_keranjang.style.display = 'none';
         hapus_keranjang.style.display = 'none';
     </script>
 <?php
