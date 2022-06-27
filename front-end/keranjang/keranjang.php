@@ -28,8 +28,8 @@ include '../config.php';
           <?php
           if ($cek_cart) {
             while ($cart_data = mysqli_fetch_array($select_cart)) {
-              $hitung_diskon_fs = ($cart_data['diskon_k'] / 100) * $cart_data['harga_k'];
-              $harga_diskon_fs = ($cart_data['harga_k'] - $hitung_diskon_fs) * $cart_data['jumlah'];
+              $hitung_diskon_fs = ($cart_data['diskon'] / 100) * $cart_data['harga'];
+              $harga_diskon_fs = ($cart_data['harga'] - $hitung_diskon_fs) * $cart_data['jumlah'];
               $exp_gambar_cd = explode(',', $cart_data['gambar']);
           ?>
               <div class="isi_cart" id="isi_cart<?php echo $cart_data['id']; ?>">
@@ -46,11 +46,9 @@ include '../config.php';
                     <p>Total Harga</p>
                     <h1><span>Rp</span> <?php echo number_format($harga_diskon_fs, 0, ".", "."); ?></h1>
                   </div>
-                  <div class="bayar" id="button_checkout<?php echo $cart_data['id']; ?>" onclick="checkout('<?php echo $cart_data['id']; ?>', 'idkontol')">Checkout</div>
-                  <div class="bayar loading_checkout" id="loading_checkout<?php echo $cart_data['id']; ?>"><img src="../assets/icons/loading-w.svg" alt=""></div>
+                  <div class="bayar" id="button_checkout<?php echo $cart_data['id']; ?>" onclick="checkout('<?php echo $cart_data['id']; ?>')">Checkout</div>
                   <div class="box_remove_cart" onclick="removecart(<?php echo $cart_data['id']; ?>)">
                     <i class="ri-delete-bin-line" id="icon_remove_cart<?php echo $cart_data['id']; ?>"></i>
-                    <img src="../assets/icons/loading-o.svg" id="loading_remove_cart<?php echo $cart_data['id']; ?>">
                   </div>
                 </div>
               </div>
@@ -77,4 +75,5 @@ include '../config.php';
   <?php include '../components/footer.php'; ?>
   <script src="../assets/js/keranjang.js"></script>
 </body>
+
 </html>
