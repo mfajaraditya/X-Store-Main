@@ -32,6 +32,10 @@
   border-radius: 45px;
 }
 
+.tab-menu {
+  flex: 1;
+}
+
 .container-data-user {
   flex: 1;
   margin-left: 16px;
@@ -88,43 +92,34 @@
   flex-direction: row;
 }
 
-.content-pilih-menu {
+.isi_select_order_menu {
   flex: 1;
   padding: 15px 0;
   display: flex;
   justify-content: center;
+  cursor: pointer;
+  color: blue;
   font-size: 15px;
+  font-weight: 500;
   border-top: 2px solid white;
   border-bottom: 2px solid white;
 }
 
-.content-pilih-menu-active {
+.isi_select_order_menu_active {
   flex: 1;
   padding: 15px 0;
   display: flex;
-  color: blue;
   justify-content: center;
   font-size: 15px;
   border-top: 2px solid white;
   border-bottom: 2px solid red;
 }
 
-.menu-info-akun-mobile {
-  display: none;
-}
-
-.tidak-ada-pesanan {
+.res_order_menu {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 120px 0;
-}
-
-.tidak-ada-pesanan p {
-  font-size: 15px;
-  text-align: center;
+  box-sizing: border-box;
   margin-top: 15px;
+  background-color: rgb(200, 200, 200);
 }
 
 @media screen and (max-width: 430px) {

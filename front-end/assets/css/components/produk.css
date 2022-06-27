@@ -47,7 +47,6 @@
      font-size: 17px;
      font-weight: 600;
      margin-right: 5px;
-     margin-top: 1px;
 }
 
 .isi-container-rate-produk i {
@@ -63,8 +62,6 @@
 
 .isi-container-rate-produk p {
      font-size: 17px;
-     margin-right: 5px;
-     margin-top: 1px;
 }
 
 .container-harga {
@@ -446,7 +443,7 @@
 /* RESPONSIVE */
 
 @media only screen and (max-width: 900px) {
-    .produk {
+    .product {
         margin-top: 0;
         padding: 0;
     }
@@ -484,6 +481,7 @@
     .box_hasil_jumlah {
         width: 50px;
         height: 30px;
+        /* background-color: red; */
     }
     .box_hasil_jumlah input {
         font-size: 13px;
@@ -517,40 +515,47 @@
     .beli_sekarang p {
         font-size: 14px;
     }
+    .back_header {
+        display: none;
+    }
+    header {
+        display: none;
+    }
     .desc_produk h1 {
         font-size: 17px;
     }
-    .container-rate-produk {
+    .box_rate_product {
+        /* background-color: red; */
         margin-top: 15px;
     }
-    .container-rate-produk span {
+    .box_rate_product span {
         margin: 0 10px;
     }
-    .isi-container-rate-produk h5 {
+    .isi_box_rate_product h5 {
         font-size: 13px;
     }
-    .isi-container-rate-produki {
+    .isi_box_rate_product i {
         font-size: 13px;
     }
-    .isi-container-rate-produk h4 {
+    .isi_box_rate_product h4 {
         font-size: 13px;
     }
-    .isi-container-rate-produk p {
+    .isi_box_rate_product p {
         font-size: 13px;
     }
-    .container-harga {
+    .harga_box {
         margin-top: 20px;
     }
-    .isi-container-harga h2 span {
+    .isi_harga_box h2 span {
         font-size: 15px;
     }
-    .isi-container-harga h2 {
+    .isi_harga_box h2 {
         font-size: 20px;
     }
-    .isi-container-harga h3 {
+    .isi_harga_box h3 {
         font-size: 15px;
     }
-    .isi-container-harga h3 span {
+    .isi_harga_box h3 span {
         font-size: 12px;
     }
     .isi_harga_fs i {
@@ -558,6 +563,13 @@
     }
     .isi_harga_fs p {
         font-size: 16px;
+    }
+    .cv_title {
+        padding: 0 15px;
+        height: 53px;
+    }
+    .cv_title p {
+        font-size: 15px;
     }
     .isi-konten {
         padding: 15px;

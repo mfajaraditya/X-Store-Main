@@ -1,5 +1,45 @@
 <?php
 include '../config.php';
+if (isset($_GET['code'])) {
+  $token = $google_client->fetchAccessTokenWithAuthCode($_GET["code"]);
+  if (!isset($token['error'])) {
+      // CEK AKUN
+      $akun_user = $server->query("SELECT * FROM `akun` WHERE `email`='$email_google'");
+      $akun_user_data = mysqli_fetch_assoc($akun_user);
+      // HASIL CEK AKUN
+      if ($akun_user_data) {
+          $idakun = $akun_user_data['id'] . "hcCTZvFLD7XIchiaMqEka0TLzGgdpsXB";
+          $ciphering = "AES-128-CTR";
+          $iv_length = openssl_cipher_iv_length($ciphering);
+          $options = 0;
+          $encryption_iv = '1234567891011121';
+          $encryption_key = "ecommerce";
+          $encryption = openssl_encrypt($idakun, $ciphering, $encryption_key, $options, $encryption_iv);
+          $buat_cookie = setcookie("login", $encryption, time() + (86400 * 30), "/");
+          if ($buat_cookie) {
+              echo '<script>window.location.href="' . $url . '";</script>';
+          }
+      } else {
+          $insert_akun = $server->query("INSERT INTO `akun`(`foto`, `nama_lengkap`, `email`, `waktu`, `tipe_daftar`) VALUES ('user.png', '$nama_lengkap_google', '$email_google', '$time', '$jenis_daftar')");
+          if ($insert_akun) {
+              $select_akun = $server->query("SELECT * FROM `akun` WHERE `email`='$email_google'");
+              $select_akun_data = mysqli_fetch_assoc($select_akun);
+              // ENSKRIPSI ID
+              $idakun = $select_akun_data['id'] . "hcCTZvFLD7XIchiaMqEka0TLzGgdpsXB";
+              $ciphering = "AES-128-CTR";
+              $iv_length = openssl_cipher_iv_length($ciphering);
+              $options = 0;
+              $encryption_iv = '1234567891011121';
+              $encryption_key = "ecommerce";
+              $encryption = openssl_encrypt($idakun, $ciphering, $encryption_key, $options, $encryption_iv);
+              $buat_cookie = setcookie("login", $encryption, time() + (86400 * 30), "/");
+              if ($buat_cookie) {
+                  echo '<script>window.location.href="' . $url . '";</script>';
+              }
+          }
+      }
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
