@@ -22,7 +22,7 @@ if (!isset($_COOKIE['login'])) {
       <div class="profil">
         <div class="info-akun">
           <div class="info-akun2">
-            <img src="../assets/images/user.png">
+            <img src="../assets/images/<?php echo $profile['foto']; ?>">
             <div class="container-data-user">
               <h1><?php echo $profile['nama_lengkap']; ?></h1>
               <p><?php echo $profile['email']; ?></p>
@@ -43,6 +43,10 @@ if (!isset($_COOKIE['login'])) {
         </div>
         <div class="tab-menu" id="tab_menu">
           <div class="container-pilih-menu">
+            <div class="header-pilih-menu">
+              <p>Pesanan Saya</p>
+              <i class="ri-close-line" id="close_order_menu"></i>
+            </div>
             <div class="container-pilih-menu2">
               <div class="pilih-menu">
                 <div class="isi_select_order_menu_active" id="belum_bayar">

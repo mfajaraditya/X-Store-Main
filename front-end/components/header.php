@@ -23,26 +23,27 @@
         <button><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
       <div class="res_search_header" id="res_search_header">
-        <!-- <center><img src="<?php echo $url; ?>assets/icons/loading-o.svg" class="loading_res_search_header" id="loading_res_search_header"></center> -->
         <div id="isi_res_search_header"></div>
       </div>
     </div>
     <div class="menu-header">
       <div class="profile-menu-header">
         <?php
-        if (isset($_COOKIE['login'])){
+        if (isset($_COOKIE['login'])) {
         ?>
-        <a href="<?php echo $url; ?>keranjang/keranjang">Cart</a>
-        <p>|</p>
-        <a href="<?php echo $url; ?>akun/akun">
-          <img src="<?php echo $url; ?>assets/images/user.png" class="user" />
-        </a>
+          <a href="<?php echo $url; ?>keranjang/keranjang">
+              <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+          <p>|</p>
+          <a href="<?php echo $url; ?>akun/akun">
+            <img src="<?php echo $url; ?>assets/images/<?php echo $profile['foto']; ?>" class="user" />
+          </a>
         <?php
         } else {
-        ?> 
-        <a href="<?php echo $url; ?>daftar-masuk/daftar">Daftar</a>
-        <p>|</p>
-        <a href="<?php echo $url; ?>daftar-masuk/masuk">Masuk</a>
+        ?>
+          <a href="<?php echo $url; ?>daftar-masuk/daftar">Daftar</a>
+          <p>|</p>
+          <a href="<?php echo $url; ?>daftar-masuk/masuk">Masuk</a>
         <?php
         }
         ?>

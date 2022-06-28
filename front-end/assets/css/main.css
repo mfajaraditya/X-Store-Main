@@ -190,6 +190,17 @@ a:hover {
 	color: white;
  }
 
+ .input {
+    width: 100%;
+    border: 2px solid rgb(202, 202, 202);
+    padding: 15px 13px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: black;
+    outline: none;
+    resize: none;
+  }
+
 /* Footer */
 footer {
      width: 100%;
@@ -734,7 +745,7 @@ footer-bar {
          font-size: 10px;
      }
      .iklan_flash_sale {
-         border: 2px solid rgb(205, 205, 205)
+         border: 2px solid rgb(205, 205, 205);
      }
      .box_persen_flashsale p {
          font-size: 13px;
