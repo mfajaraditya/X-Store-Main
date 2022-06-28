@@ -46,7 +46,6 @@ if ($cek_invoice == "0") {
 <style>
     .box_res_order_0 {
         width: 100%;
-        background-color: var(--white);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -61,7 +60,6 @@ if ($cek_invoice == "0") {
         font-size: 15px;
         font-weight: 500;
         text-align: center;
-        color: var(--semi-black);
         margin-top: 15px;
     }
 
@@ -76,7 +74,6 @@ if ($cek_invoice == "0") {
     .isi_cart {
         width: 100%;
         padding: 15px 20px;
-        background-color: var(--white);
         box-sizing: border-box;
         overflow: hidden;
         display: flex;
@@ -105,7 +102,6 @@ if ($cek_invoice == "0") {
     .box_judul_ic h1 {
         font-size: 15px;
         font-weight: 500;
-        color: var(--black);
         margin-bottom: 8px;
         white-space: nowrap;
         overflow: hidden;
@@ -115,12 +111,12 @@ if ($cek_invoice == "0") {
     .box_judul_ic p {
         font-size: 13px;
         font-weight: 500;
-        color: var(--grey);
+        color: grey;
         margin-top: 3px;
     }
 
     .box_judul_ic p span {
-        color: var(--orange);
+        color: red;
     }
 
     .box_detail_isi_cart {
@@ -140,14 +136,13 @@ if ($cek_invoice == "0") {
     .box_total_harga p {
         font-size: 13px;
         font-weight: 500;
-        color: var(--grey);
         margin-top: 3px;
     }
 
     .box_total_harga h1 {
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--grey);
+        font-size: 18px;
+        font-weight: 600;
+        color: #fb6000;
         margin-top: 3px;
     }
 
@@ -156,8 +151,8 @@ if ($cek_invoice == "0") {
     }
 
     .bayar {
-        background-color: var(--orange);
-        color: var(--white);
+        background-color: #fb6000;
+        color: white;
         border-radius: 3px;
         height: 45px;
         font-weight: 500;
@@ -187,7 +182,6 @@ if ($cek_invoice == "0") {
 
         .box_gambar_judul {
             width: 100%;
-            /* background-color: red; */
         }
 
         .isi_cart img {
@@ -198,7 +192,6 @@ if ($cek_invoice == "0") {
         .box_judul_ic {
             width: calc(100% - 80px);
             float: right;
-            /* background-color: blue; */
         }
 
         .box_judul_ic h1 {
@@ -211,10 +204,9 @@ if ($cek_invoice == "0") {
 
         .box_detail_isi_cart {
             width: 100%;
-            /* background-color: blue; */
             margin-top: 15px;
             padding-top: 13px;
-            border-top: 1px solid var(--border-grey);
+            border-top: 1px solid grey;
             justify-content: flex-start;
         }
 
@@ -222,20 +214,18 @@ if ($cek_invoice == "0") {
             flex: 1;
             margin-left: 0;
             text-align: left;
-            /* background-color: red; */
         }
 
         .box_total_harga p {
             font-size: 11px;
             font-weight: 500;
-            color: var(--grey);
             margin-top: 0px;
         }
 
         .box_total_harga h1 {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--grey);
+            font-size: 14px;
+            font-weight: 600;
+            color:#fb6000;
             margin-top: 3px;
         }
 
