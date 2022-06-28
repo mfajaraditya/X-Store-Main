@@ -218,16 +218,6 @@ footer {
      font-size: 15px;
 }
 
-footer-bar {
-     width: 100%;
-     padding: 20px 0 30px 0;
-     position: absolute;
-     bottom: 0;
-     margin-top: 30px;
-     background-color: white;
-     border-top: 2px solid rgb(200, 200, 200);
-}
-
 .kategori {
 	width: 100%;
 	margin-top: 30px;
@@ -255,69 +245,6 @@ footer-bar {
 	margin-top: 15px;
 	text-align: center;
 	line-height: 20px;
-}
-
-.flash-sale {
-	width: 100%;
-	margin-top: 30px;
-	padding: 5px 0 50px 0;
-}
-
-.title-fs {
-	width: 100%;
-	padding: 20px;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	color: black;
-}
-
-.container-fs {
-	flex: 1;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.container-fs p {
-	font-size: 20px;
-}
-
-.container-iklan-fs {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	grid-gap: 10px;
-}
-
-.iklan-fs {
-	width: 100%;
-	background-color: rgb(225, 225, 225);
-	position: relative;
-	border-radius: 20px;
-	/* box-shadow: 0 0 30px 0 rgb(99, 99, 99); */
-}
-
-.iklan-fs img {
-	width: 100%;
-	object-fit: cover;
-	border-radius: 9px;
-}
-
-.title-iklan-fs {
-	width: 100%;
-	padding: 13px 15px 15px 15px;
-	color: black;
-	box-sizing: border-box;
-}
-
-.title-iklan-fs h1 {
-	font-size: 16px;
-}
-
-.title-iklan-fs span {
-	font-size: 18px;
 }
 
 .back-bot-nav {
@@ -635,24 +562,6 @@ footer-bar {
  /* RESPONSIVE */
  
  @media only screen and (max-width: 900px) {
-     .banner_big_iklan {
-         width: 100%;
-         height: auto;
-     }
-     .img_banner_big_iklan {
-         height: 90px;
-     }
-     .banner_small_iklan {
-         display: none;
-     }
-     .box_kategori {
-         overflow: auto;
-         -ms-overflow-style: none;
-         scrollbar-width: none;
-     }
-     .box_kategori::-webkit-scrollbar {
-         display: none;
-     }
      .box_iklan_flash_sale_1 {
          overflow: auto;
          -ms-overflow-style: none;
@@ -664,16 +573,6 @@ footer-bar {
  }
  
  @media screen and (max-width: 600px) {
-     .banner_iklan {
-         margin-top: 15px;
-     }
-     .banner_big_iklan {
-         padding: 0 15px;
-         box-sizing: border-box;
-     }
-     .box_kategori {
-         width: 100%;
-     }
      .kategori {
          width: 850px;
          box-sizing: border-box;
