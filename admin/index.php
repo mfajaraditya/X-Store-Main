@@ -1,4 +1,5 @@
 <?php require_once("auth.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,15 +119,6 @@
           </li>
 
           <li class="nav-item">
-            <a href="penjualan/penjualan.php" class="nav-link">
-              <i class="nav-icon fas fa-bolt"></i>
-              <p>
-                Flash Sale
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="pengaturan.php" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
@@ -173,13 +165,18 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>150</h3>
+              <?php
+                include 'koneksi.php';
+                $data_pelanggan = mysqli_query($koneksi,"SELECT * FROM akun");
+                $jumlah_pelanggan = mysqli_num_rows($data_pelanggan);
+              ?>
+              <h3><?php echo $jumlah_pelanggan; ?></h3>
                 <p>Jumlah Pelanggan</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="#" class="small-box-footer">Data Analitik<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="pelanggan/pelanggan.php" class="small-box-footer">Data Analitik<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -187,13 +184,18 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>53</h3>
+              <?php
+                include 'koneksi.php';
+                $data_transaksi = mysqli_query($koneksi,"SELECT * FROM keranjang");
+                $jumlah_transaksi = mysqli_num_rows($data_transaksi);
+              ?>
+              <h3><?php echo $jumlah_transaksi; ?></h3>
                 <p>Jumlah Transaksi</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">Data Analitik<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="transaksi/transaksi.php" class="small-box-footer">Data Analitik<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -201,13 +203,18 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>44</h3>
+              <?php
+                include 'koneksi.php';
+                $data_produk = mysqli_query($koneksi,"SELECT * FROM iklan");
+                $jumlah_produk = mysqli_num_rows($data_produk);
+              ?>
+              <h3><?php echo $jumlah_produk; ?></h3>
                 <p>Jumlah Produk</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
               </div>
-              <a href="#" class="small-box-footer">Data Analitik<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="produk/produk.php" class="small-box-footer">Data Analitik<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -215,13 +222,18 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+              <?php
+                include 'koneksi.php';
+                $data_kategori = mysqli_query($koneksi,"SELECT * FROM kategori");
+                $jumlah_kategori = mysqli_num_rows($data_kategori);
+              ?>
+              <h3><?php echo $jumlah_kategori; ?></h3>
                 <p>Jumlah Kategori</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">Data Analitik<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="kategori/kategori.php" class="small-box-footer">Data Analitik<i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
