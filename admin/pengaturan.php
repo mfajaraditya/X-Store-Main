@@ -170,7 +170,7 @@
   <a class="list-group-item list-group-item-action nav-link" href="#" id="header">Header</a>
   <a class="list-group-item list-group-item-action nav-link" href="#" id="footer"> Footer</a>
   <a class="list-group-item list-group-item-action nav-link" href="#" id="api">API Key</a>
-  <a class="list-group-item list-group-item-action nav-link" href="#" id="lokasi">Lokasi Pengiriman</a>
+  <!-- <a class="list-group-item list-group-item-action nav-link" href="#" id="lokasi">Lokasi Pengiriman</a> -->
   <a class="list-group-item list-group-item-action nav-link" href="#" id="pembayaran">Metode Pembayaran</a>
 </div>
 
