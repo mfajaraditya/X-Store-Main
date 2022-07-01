@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -117,15 +118,6 @@
           </li>
 
           <li class="nav-item">
-            <a href="../penjualan/penjualan.php" class="nav-link">
-              <i class="nav-icon fas fa-bolt"></i>
-              <p>
-                Flash Sale
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="../pengaturan.php" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
@@ -172,7 +164,7 @@
               <!-- /.card-header -->
               <div class="card-body">
                   <a href="" class="btn btn-success">Tambah Kategori</a><br><br>
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="myTable" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>No</th>
@@ -180,15 +172,24 @@
                     <th>Opsi</th>
                   </tr>
                   </thead>
+                   <?php 
+                        include '../koneksi.php';
+                        $no = 1;
+                        $data = mysqli_query($koneksi,"select * from kategori");
+                        while($d = mysqli_fetch_array($data)){
+                    ?>
                   <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>T-Shirt</td>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo $d['nama']; ?></td>
                     <td>
-                        <a href="" class="btn btn-warning"> Ubah </a>
-                        <a href="" class="btn btn-danger"> Hapus </a>
+                        <a href="ubah.php?id=<?php echo $d['id']; ?>" class="btn btn-warning"> Ubah </a>
+                        <a href="hapus.php?id=<?php echo $d['id']; ?>" class="btn btn-danger"> Hapus </a>
                     </td>
                   </tr>
+                  <?php 
+                    }
+                  ?>
                   </tbody>
                 </table>
               </div>
@@ -255,5 +256,12 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard.js"></script>
+
+<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 </body>
 </html>
