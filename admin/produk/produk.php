@@ -30,6 +30,12 @@
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+
+  <style>
+    div.card{
+      overflow: scroll;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -122,15 +128,6 @@
           </li>
 
           <li class="nav-item">
-            <a href="../penjualan/penjualan.php" class="nav-link">
-              <i class="nav-icon fas fa-bolt"></i>
-              <p>
-                Flash Sale
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="../pengaturan.php" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
@@ -176,14 +173,13 @@
         <div class="card">
               <!-- /.card-header -->
               <div class="card-body">
-                  <a href="" class="btn btn-success">Tambah Produk</a><br><br>
+                  <a href="tambah.php" class="btn btn-success">Tambah Produk</a><br><br>
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>No</th>
                     <th>Gambar</th>
                     <th>Nama Produk</th>
-                    <th>Kategori</th>
                     <th>Harga</th>
                     <th>Berat</th>
                     <th>Terjual</th>
@@ -191,21 +187,29 @@
                     <th>Opsi</th>
                   </tr>
                   </thead>
+                    <?php 
+                        include '../koneksi.php';
+                        $no = 1;
+                        $data = mysqli_query($koneksi,"select * from iklan");
+                        while($d = mysqli_fetch_array($data)){
+                    ?>
                   <tbody>
                   <tr>
-                    <td>1</td>
-                    <td><img src="../dist/img/kaos.jpg" alt="t-shirt black"></td>
-                    <td>Kaos Hitam T-Shirt Polos House of Cuff Motif Tokyo Black</td>
-                    <td>T-Shirt</td>
-                    <td>Rp 85.000</td>
-                    <td>100 Gram</td>
-                    <td>20</td>
-                    <td>500</td>
+                    <td><?php echo $no++; ?></td>
+                    <td><img src="../dist/img/<?php echo $d['gambar']; ?>" alt="Gambar Produk" width="100" height="100"></td>
+                    <td><?php echo $d['judul']; ?></td>
+                    <td><?php echo $d['harga']; ?></td>
+                    <td><?php echo $d['berat']; ?></td>
+                    <td><?php echo $d['terjual']; ?></td>
+                    <td><?php echo $d['stok']; ?></td>
                     <td>
-                        <a href="" class="btn btn-warning"> Ubah </a>
-                        <a href="" class="btn btn-danger"> Hapus </a>
+                        <a href="ubah.php?id=<?php echo $d['id']; ?>" class="btn btn-warning"> Ubah </a>
+                        <a href="hapus.php?id=<?php echo $d['id']; ?>" class="btn btn-danger"> Hapus </a>
                     </td>
                   </tr>
+                  <?php 
+                    }
+                  ?>
                   </tbody>
                 </table>
               </div>
