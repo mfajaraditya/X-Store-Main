@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -117,15 +118,6 @@
           </li>
 
           <li class="nav-item">
-            <a href="../penjualan/penjualan.php" class="nav-link">
-              <i class="nav-icon fas fa-bolt"></i>
-              <p>
-                Flash Sale
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="../pengaturan.php" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
@@ -171,31 +163,40 @@
         <div class="card">
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="myTable" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>No</th>
                     <th>Nama Pelanggan</th>
                     <th>Nomor WhatsApp</th>
+                    <th>Email</th>
                     <th>Tipe Daftar</th>
                     <th>Tipe Akun</th>
-                    <th>Waktu Daftar</th>
                     <th>Opsi</th>
                   </tr>
                   </thead>
+                  <?php 
+                    include '../koneksi.php';
+                    $no = 1;
+                    $data = mysqli_query($koneksi,"select * from akun");
+                    while($d = mysqli_fetch_array($data)){
+                  ?>
                   <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>Intan Aprilia</td>
-                    <td>087765485810</td>
-                    <td>Website</td>
-                    <td>User</td>
-                    <td>2022-06-06 21:05:15</td>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo $d['nama_lengkap']; ?></td>
+                    <td><?php echo $d['no_whatsapp']; ?></td>
+                    <td><?php echo $d['email']; ?></td>
+                    <td><?php echo $d['tipe_daftar']; ?></td>
+                    <td><?php echo $d['tipe_akun']; ?></td>
                     <td>
-                        <a href="" class="btn btn-warning"> Ubah </a>
-                        <a href="" class="btn btn-danger"> Hapus </a>
+                        <a href="ubah.php?id=<?php echo $d['id']; ?>" class="btn btn-warning"> Ubah </a>
+                        <a href="hapus.php?id=<?php echo $d['id']; ?>" class="btn btn-danger"> Hapus </a>
                     </td>
                   </tr>
+                  <?php
+                    }
+                  ?>
                   </tbody>
                 </table>
               </div>
@@ -262,5 +263,12 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard.js"></script>
+
+<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 </body>
 </html>
