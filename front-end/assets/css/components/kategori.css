@@ -1,17 +1,5 @@
 @import url('../main.css');
 
-.list-produk {
-  box-sizing: border-box;
-}
-
-.list-produk img {
-  height: 120px;
-}
-
-.text-list-produk {
-  padding: 7px 10px 10px 10px;
-}
-
 .title-kategori {
   width: 100%;
   height: 70px;
@@ -30,6 +18,14 @@
 .title-kategori span {
   font-size: 22px;
   color: #fb6000;
+}
+
+.list-produk {
+  box-sizing: border-box;
+}
+
+.list-produk img {
+  height: 120px;
 }
 
 .container-produk {
@@ -58,4 +54,25 @@
 
 .container-harga-produk p {
   font-size: 9px;
+}
+
+@media screen and (max-width: 600px) {
+  .container-produk {
+    margin-top: 0;
+    padding: 0px 15px 15px 15px;
+    box-sizing: border-box;
+    grid-template-columns: 1fr 1fr;
+  }
+  .title-kategori {
+    margin-top: 15px;
+    padding: 0 15px;
+    height: 53px;
+}
+.title-kategori p {
+    font-size: 15px;
+}
+.title-kategori span {
+    font-size: 15px;
+}
+
 }

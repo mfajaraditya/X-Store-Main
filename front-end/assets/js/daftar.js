@@ -1,6 +1,7 @@
 daftar.onclick = function () {
     var format_email = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var format_nomor = /^[0-9]+$/;
+    var format_password = /^[A-Za-z]\w{7,14}$/;
     if (nama_lengkap.value == "") {
         nama_lengkap.style.borderColor = '#EA2027';
         p_nama_lengkap.style.display = 'block';

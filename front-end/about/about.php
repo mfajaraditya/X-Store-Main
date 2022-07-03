@@ -3,6 +3,7 @@ include '../config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,6 +12,7 @@ include '../config.php';
   <link rel="stylesheet" href="../assets/css/components/about-us.css">
   <title>X-Store</title>
 </head>
+
 <body>
   <header>
     <div class="container">
@@ -20,6 +22,7 @@ include '../config.php';
             <img src="<?php echo $url; ?>assets/images/logo.png">
         </a>
       </div>
+      </a>
     </div>
     </div>
   </header>
@@ -27,13 +30,17 @@ include '../config.php';
     <div class="container">
       <div class="container-au">
         <div class="about-us">
-          <h1>Tentang Kami</h1>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum voluptas laborum temporibus magni. Facilis reprehenderit harum dolorem quaerat repellendus cumque sapiente laboriosam quibusdam tempore, similique dignissimos enim itaque ea maiores!</p><br>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit magnam error velit enim sunt impedit eaque explicabo deserunt nihil, nostrum deleniti itaque, soluta tempore rem veniam ex nulla adipisci sapiente?</p>
+          <h1>Tentang Kami</h1></br>
+          <p>X-STORE adalah situs elektronik komersial yang berkantor pusat di Kota Semarang yang didirikan pada tahun 2020 milik EX-SCIENCE.
+            Kini X-STORE hadir di tengah-tengah masyarakat dengan tujuan membantu para UMKM secara totalitas dengan model individual dalam berbisnis.</br></br>
+            Sejauh ini platform maupun aplikasi belanja online (e-commerce) begitu menjamur, namun belum adanya platform yang menyediakan pelayanan administrasi secara penuh bagi pelaku bisnis. 
+            Melalui proyek ini kami mendatangkan solusi bagi para pelaku bisnis dan UMKM dalam mengelola administrasi bisnis harian tanpa ribet dan mudah dipantau.</br>
+          </p>
         </div>
       </div>
     </div>
   </main>
   <?php include '../components/footer.php'; ?>
 </body>
+
 </html>

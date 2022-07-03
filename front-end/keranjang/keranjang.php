@@ -3,6 +3,7 @@ include '../config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,6 +13,7 @@ include '../config.php';
   <link rel="stylesheet" href="../assets/css/components/keranjang.css">
   <title>X-Store</title>
 </head>
+
 <body>
   <?php include '../components/header.php'; ?>
   <main>

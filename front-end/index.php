@@ -40,7 +40,7 @@ include "./config.php";
         </div>
       </div>
 
-      <!-- FLASH SALE -->
+      <!-- Flash Sale -->
       <?php
       $select_fs = $server->query("SELECT * FROM `flashsale` WHERE `id_fs`='1' ");
       $data_fs = mysqli_fetch_assoc($select_fs);
@@ -187,4 +187,5 @@ include "./config.php";
   <?php include './components/footer.php'; ?>
   <script src="./assets/js/index.js"></script>
 </body>
+
 </html>

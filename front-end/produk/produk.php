@@ -314,7 +314,6 @@ if ($produk_data) {
         include '../components/belum-login.php';
       }
   ?>
-  <?php include '../components/bottom-nav.php'; ?>
   </main>
   <?php include '../components/footer.php'; ?>
   <script src="../../assets/js/produk.js"></script>

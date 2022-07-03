@@ -116,6 +116,7 @@ if ($cek_invoice == "0") {
         font-weight: 500;
         color: grey;
         margin-top: 3px;
+        color: black;
     }
 
     .box_judul_ic p span {
@@ -139,6 +140,7 @@ if ($cek_invoice == "0") {
     .box_total_harga p {
         font-size: 13px;
         font-weight: 500;
+        color: grey;
         margin-top: 3px;
     }
 
@@ -222,6 +224,7 @@ if ($cek_invoice == "0") {
         .box_total_harga p {
             font-size: 11px;
             font-weight: 500;
+            color: grey;
             margin-top: 0px;
         }
 
