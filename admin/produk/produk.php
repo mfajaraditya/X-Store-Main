@@ -6,9 +6,11 @@
   <title>Seller X-STORE</title>
 
    <!-- DataTables -->
-   <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+   <!-- <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
    <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+   <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css"> -->
+
+   <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -30,6 +32,20 @@
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <style>
+    a{
+      text-decoration:none;
+    }
+
+    div.card{
+      overflow: scroll;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -122,15 +138,6 @@
           </li>
 
           <li class="nav-item">
-            <a href="../penjualan/penjualan.php" class="nav-link">
-              <i class="nav-icon fas fa-bolt"></i>
-              <p>
-                Flash Sale
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="../pengaturan.php" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
@@ -175,15 +182,74 @@
         
         <div class="card">
               <!-- /.card-header -->
-              <div class="card-body">
-                  <a href="" class="btn btn-success">Tambah Produk</a><br><br>
-                <table id="example1" class="table table-bordered table-striped">
+          <div class="card-body">
+
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+    Tambah Data
+  </button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Tambah Data</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <form action="tambah_aksi.php" method="POST">
+
+        <div class="mb-3 mt-3">
+          <label for="gambar" class="form-label">Gambar</label>
+          <input type="file" class="form-control" id="gambar" placeholder="Masukkan Gambar Produk" name="gambar">
+        </div>
+
+        <div class="mb-3">
+          <label for="judul" class="form-label">Nama</label>
+          <input type="text" class="form-control" id="judul" placeholder="Masukkan Nama Produk" name="judul">
+        </div>
+
+        <div class="mb-3">
+          <label for="harga" class="form-label">Harga</label>
+          <input type="text" class="form-control" id="harga" placeholder="Masukkan Harga Produk" name="harga">
+        </div>
+
+        <div class="mb-3">
+          <label for="berat" class="form-label">Berat</label>
+          <input type="text" class="form-control" id="berat" placeholder="Masukkan Berat Produk" name="berat">
+        </div>
+
+        <div class="mb-3">
+          <label for="terjual" class="form-label">Terjual</label>
+          <input type="text" class="form-control" id="terjual" placeholder="Masukkan Terjual Produk" name="terjual">
+        </div>
+
+        <div class="mb-3">
+          <label for="stok" class="form-label">Stok</label>
+          <input type="text" class="form-control" id="stok" placeholder="Masukkan Stok Produk" name="stok">
+        </div>
+
+        <button type="submit" class="btn btn-success">Simpan</button>
+        <button type="reset"  class="btn btn-danger">Batal</button>
+      </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+                <table id="myTable" class="table">
                   <thead>
                   <tr>
                     <th>No</th>
                     <th>Gambar</th>
                     <th>Nama Produk</th>
-                    <th>Kategori</th>
                     <th>Harga</th>
                     <th>Berat</th>
                     <th>Terjual</th>
@@ -191,22 +257,30 @@
                     <th>Opsi</th>
                   </tr>
                   </thead>
+                    <?php 
+                        include '../koneksi.php';
+                        $no = 1;
+                        $data = mysqli_query($koneksi,"SELECT * FROM iklan");
+                        while($d = mysqli_fetch_array($data)){
+                    ?>
                   <tbody>
                   <tr>
-                    <td>1</td>
-                    <td><img src="../dist/img/kaos.jpg" alt="t-shirt black"></td>
-                    <td>Kaos Hitam T-Shirt Polos House of Cuff Motif Tokyo Black</td>
-                    <td>T-Shirt</td>
-                    <td>Rp 85.000</td>
-                    <td>100 Gram</td>
-                    <td>20</td>
-                    <td>500</td>
+                    <td><?php echo $no++; ?></td>
+                    <td><img src="../dist/img/<?php echo $d['gambar']; ?>" alt="Gambar Produk" width="100" height="100"></td>
+                    <td><?php echo $d['judul']; ?></td>
+                    <td><?php echo $d['harga']; ?></td>
+                    <td><?php echo $d['berat']; ?></td>
+                    <td><?php echo $d['terjual']; ?></td>
+                    <td><?php echo $d['stok']; ?></td>
                     <td>
-                        <a href="" class="btn btn-warning"> Ubah </a>
-                        <a href="" class="btn btn-danger"> Hapus </a>
+                        <a href="ubah.php?id=<?php echo $d['id']; ?>" class="btn btn-warning"><i class="fas fa-cog"></i></a>
+                        <a href="hapus.php?id=<?php echo $d['id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
                   </tbody>
+                  <?php 
+                    }
+                  ?>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -274,7 +348,7 @@
 <script src="../dist/js/pages/dashboard.js"></script>
 
 <!-- DataTables  & Plugins -->
-<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<!-- <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
 <script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 <script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
@@ -285,24 +359,14 @@
 <script src="../plugins/pdfmake/vfs_fonts.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script> -->
+
+<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
+ $(document).ready(function () {
+    $('#myTable').DataTable();
+});
 </script>
 </body>
 </html>
