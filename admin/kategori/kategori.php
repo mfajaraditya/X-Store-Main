@@ -25,6 +25,15 @@
   <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    a{
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -117,15 +126,6 @@
           </li>
 
           <li class="nav-item">
-            <a href="../penjualan/penjualan.php" class="nav-link">
-              <i class="nav-icon fas fa-bolt"></i>
-              <p>
-                Flash Sale
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
             <a href="../pengaturan.php" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
@@ -171,8 +171,41 @@
         <div class="card">
               <!-- /.card-header -->
               <div class="card-body">
-                  <a href="" class="btn btn-success">Tambah Kategori</a><br><br>
-                <table id="example1" class="table table-bordered table-striped">
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
+    Tambah Data
+  </button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Tambah Data</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <form action="tambah_aksi.php" method="POST">
+
+        <div class="mb-3">
+          <label for="kategori" class="form-label">Kategori</label>
+          <input type="text" class="form-control" id="kategori" placeholder="Masukkan Kategori Produk" name="kategori">
+        </div>
+
+        <button type="submit" class="btn btn-success">Simpan</button>
+        <button type="reset"  class="btn btn-danger">Batal</button>
+      </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<br><br>
+                <table id="myTable" class="table">
                   <thead>
                   <tr>
                     <th>No</th>
@@ -180,15 +213,24 @@
                     <th>Opsi</th>
                   </tr>
                   </thead>
+                   <?php 
+                        include '../koneksi.php';
+                        $no = 1;
+                        $data = mysqli_query($koneksi,"SELECT * FROM kategori");
+                        while($d = mysqli_fetch_array($data)){
+                    ?>
                   <tbody>
                   <tr>
-                    <td>1</td>
-                    <td>T-Shirt</td>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo $d['nama']; ?></td>
                     <td>
-                        <a href="" class="btn btn-warning"> Ubah </a>
-                        <a href="" class="btn btn-danger"> Hapus </a>
+                        <a href="ubah.php?id=<?php echo $d['id']; ?>" class="btn btn-warning"><i class="fas fa-cog"></i></a>
+                        <a href="hapus.php?id=<?php echo $d['id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                     </td>
                   </tr>
+                  <?php 
+                    }
+                  ?>
                   </tbody>
                 </table>
               </div>
@@ -255,5 +297,12 @@
 <script src="../dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="../dist/js/pages/dashboard.js"></script>
+
+<script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script>
+  $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
 </body>
 </html>
