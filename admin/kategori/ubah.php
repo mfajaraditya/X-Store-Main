@@ -166,7 +166,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6"><br>
-            <h1 class="m-0">Produk</h1><br>
+            <h1 class="m-0">Kategori</h1><br>
           </div><!-- /.col -->
           <div class="col-sm-6">
         </div><!-- /.row -->
@@ -182,7 +182,7 @@
         <?php
 	include '../koneksi.php';
 	$id = $_GET['id'];
-	$data = mysqli_query($koneksi,"SELECT * FROM iklan WHERE id='$id'");
+	$data = mysqli_query($koneksi,"SELECT * FROM kategori WHERE id='$id'");
 	while($d = mysqli_fetch_array($data)){
 		?>
         
@@ -195,7 +195,7 @@
         <div class="mb-3 mt-3">
           <label for="kategori" class="form-label">Kategori</label>
           <input type="hidden" name="id" value="<?php echo $d['id']; ?>">
-          <input type="text" class="form-control" id="kategori" placeholder="Masukkan Kategori Produk" name="kategori" value="<?php echo $d['kategori']; ?>">
+          <input type="text" class="form-control" id="kategori" placeholder="Masukkan Kategori Produk" name="kategori" value="<?php echo $d['nama']; ?>">
         </div>
 
         <button type="submit" class="btn btn-success">Simpan</button>
@@ -289,7 +289,7 @@
 <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 <script>
   $(document).ready( function () {
-    $('#example1').DataTable();
+    $('#myTable').DataTable();
 } );
 </script>
 </body>
